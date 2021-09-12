@@ -1,0 +1,241 @@
+$main-color : blue;
+$head-font : 'Sarina', cursive; 
+$width : 768px;
+@mixin mobile {
+    @media (max-width: #{$width})
+    {
+        @content
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+
+.container{
+    background: linear-gradient(#00C9FF,#92FE9D);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    .title{
+        margin: 15px;
+
+        h1{
+            color: $main-color;
+            display: inline;
+            @include mobile{
+                display: none;   
+            }
+        }
+        span{
+            color: $main-color;
+            font-family: $head-font;
+            font-size: 40px;
+            text-shadow: 2px 2px rgb(243, 243, 115);
+
+            @include mobile{
+                font-size: 40px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .box{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90vw;
+        height: 85vh;
+        text-align: center;
+
+        @include mobile{
+            flex-direction: column;
+            // width: 90%;
+        }
+        
+        .left{
+            height: inherit;
+            flex: 1;
+            border-radius: 20px;
+            background: linear-gradient(#fc00ff,#00dbde);
+            margin-right: 13px;
+            box-shadow: 11px -13px 20px rgb(247, 198, 247);
+
+            @include mobile{
+                margin-right: 0;
+                margin-bottom: 13px;   
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                // justify-content: center;
+                width: inherit;
+            }
+
+            h2{
+                margin: 10px;
+            }
+            
+            .todo{
+                @include mobile{
+                    width: 100%;
+                }
+                .enter{
+                    display: flex;
+                    input{
+                        text-align: center;
+                        width: 70%;
+                        height: 30px;
+                        border: none;
+                        border-radius: 20px;
+                        margin-left: 25px;
+                    }
+
+                    button{
+                        width: 15%;
+                        height: 30px;
+                        border-radius: 50px;
+                        margin-left: 10px;
+                        font-weight: bold;
+                        font-size: 15px;
+                        background: #92FE9D;
+                        transition: all 0.5s ease;
+
+                        :hover{
+                            background: #00dbde;
+                            cursor: pointer;
+                            transform: scale(1.01);
+                        }
+                    }
+                }
+
+                .showBox{
+                    margin: 20px;
+                    
+                    ul{
+                        list-style-type: none;
+                        display: flex;
+                        flex-direction: column;
+                        // align-items: left;
+                        // justify-content: space-evenly;
+
+                        li{
+                            border-radius: 15px;
+                            height: auto;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-evenly;
+                            height: 30px;
+                            margin-bottom: 10px;
+                            background:linear-gradient(pink,lightblue);
+                            input{
+                                flex:1;
+                            }
+                            label{
+                                flex:8;
+                            }
+                            a{
+                                flex:1;
+                                img{
+                                    width: 15px;
+                                    height: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        .right{
+
+            // display: none;
+            background: linear-gradient(#948E99,#2E1437);
+            height: inherit;
+            flex: 1;
+            border-radius: 20px;
+            background-color: red;
+            margin-left: 13px;
+            box-shadow: 11px -13px 20px rgb(245, 242, 245);
+
+            @include mobile{
+                margin-left: 0;
+                margin-bottom: 13px;   
+                width: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            h2{
+                margin: 10px;
+            }
+
+            .notTodo{
+                @include mobile{
+                    width: 100%;
+                }
+                
+                .enter2{
+                    display: flex;
+                    input{
+                        text-align: center;
+                        width: 70%;
+                        height: 30px;
+                        border: none;
+                        border-radius: 20px;
+                        margin-left: 25px;
+
+                    }
+                    .btn{
+                        width: 15%;
+                        height: 30px;
+                        border-radius: 50px;
+                        margin-left: 10px;
+                    }
+
+                }
+            }
+
+            .showBox2{
+                margin: 20px;
+                
+                ul{
+                    list-style-type: none;
+                    display: flex;
+                    flex-direction: column;
+
+                    li{
+                        border-radius: 15px;
+                        height: auto;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        height: 30px;
+                        margin-bottom: 10px;
+                        background:linear-gradient(lightblue,pink);
+                        input{
+                            flex:1;
+                        }
+                        label{
+                            flex:8;
+                        }
+                        a{
+                            flex:1;
+                            img{
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

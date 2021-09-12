@@ -1,0 +1,33 @@
+<%- include("./partials/header") %>
+
+<div class="container">
+    <div class="title">
+        <h1>Maximise Your Productivity with </h1><span>To-NoT-Do App</span>
+    </div>
+    <div class="box">
+        <div class="left">
+            <h2>Here your Todos</h2>
+            <div class="todo">
+                <form class="enter" action="/add/todo" method="post">
+                    <input type="text" name="todo" id="input" placeholder="Enter your todo task">
+                    <button type="submit" class="btn">Add</button>
+                </form>
+                <div class="showBox">
+                    <ul>
+                        <% todo.forEach(todos => { %>
+                            <li>   
+                                <input type="checkbox">
+                                <label for="todo"><%= todos.todo %></label>
+                                <a href="/delete/todo/<%= todos._id %>"><img src="deleteIcon.svg" alt="delete"></a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<%- include("./partials/footer") %>
