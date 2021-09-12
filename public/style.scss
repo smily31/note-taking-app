@@ -1,4 +1,4 @@
-$main-color : blue;
+$main-color :blue;
 $head-font : 'Sarina', cursive; 
 $width : 768px;
 @mixin mobile {
@@ -42,6 +42,8 @@ $width : 768px;
             @include mobile{
                 font-size: 40px;
                 font-weight: bold;
+                display: block;
+                text-align: center;
             }
         }
     }
@@ -133,11 +135,18 @@ $width : 768px;
                             height: 30px;
                             margin-bottom: 10px;
                             background:linear-gradient(pink,lightblue);
+                            @include mobile{
+                                height: 30px;
+                            }
                             input{
                                 flex:1;
                             }
                             label{
                                 flex:8;
+                                @include mobile {
+                                    font-weight: 500;
+                                    font-size: 20px;
+                                }
                             }
                             a{
                                 flex:1;

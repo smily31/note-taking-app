@@ -49,6 +49,8 @@
   .container .title span {
     font-size: 40px;
     font-weight: bold;
+    display: block;
+    text-align: center;
   }
 }
 
@@ -184,6 +186,12 @@
   background: linear-gradient(pink, lightblue);
 }
 
+@media (max-width: 768px) {
+  .container .box .left .todo .showBox ul li {
+    height: 30px;
+  }
+}
+
 .container .box .left .todo .showBox ul li input {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -194,6 +202,13 @@
   -webkit-box-flex: 8;
       -ms-flex: 8;
           flex: 8;
+}
+
+@media (max-width: 768px) {
+  .container .box .left .todo .showBox ul li label {
+    font-weight: 500;
+    font-size: 20px;
+  }
 }
 
 .container .box .left .todo .showBox ul li a {
